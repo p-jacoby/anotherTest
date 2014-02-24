@@ -12,4 +12,4 @@ JSON=$JSON" \"released_to\": \"STAGE\" }"
 TIMESTAMP=`date +"%s"`
 echo 'TS:'$TIMESTAMP
 echo 'JSON: '$JSON
-curl -X PUT -H "Content-Type: application/json" http://dcp-tools-01:5984/feature-db/$TIMESTAMP ---data-urlencode $JSON
+curl -X PUT -H "Content-Type: application/json" http://dcp-tools-01:5984/feature-db/$TIMESTAMP --data-urlencode $JSON

@@ -9,4 +9,4 @@ RELEASE_DATE="\"release_date\": $NOW\""
 JSON="{ $FEATURE_BRANCH,"
 JSON=$JSON"$RELEASE_DATE,"
 JSON=$JSON" \"released_to\": \"STAGE\" }"
-curl -X PUT -H "Content-Type: application/json" http://dcp-tools-01:5984/feature-db/`date +"%T"` -d '$JSON'
+curl -X PUT -H "Content-Type: application/json" http://dcp-tools-01:5984/feature-db/`date +"%T"` -d \'$JSON\'

@@ -1,11 +1,8 @@
 #!/bin/bash
 
-REPROPATH=`git rev-parse --show-toplevel`
-echo 'PATH: '$REPROPATH
-REPRO=`basename $REPROPATH`
-echo 'REPRO: '$REPRO
 TAGNAME="RELEASE_CANDIDATE"
 BRANCHES=`git branch`
+echo 'BRANCHES :'$BRANCHES
 CURRENT_BRANCH=`echo $BRANCHES | grep \*`
 BRANCHNAME=`echo $CURRENT_BRANCH | awk -F" " '{print $2}'`
 echo 'BRANCH: '$BRANCHNAME

@@ -1,9 +1,14 @@
 #!/bin/bash
 
 REPROPATH=`git rev-parse --show-toplevel`
+echo $REPROPATH
 REPRO=`basename $REPROPATH`
+echo $REPRO
 TAGNAME="RELEASE_CANDIDATE"
-BRANCHNAME=`git branch | grep \* | awk -F" " '{print $2}'`
+BRANCHES=`git branch`
+CURRENT_BRANCH=`echo $BRANCHES | grep \*`
+BRANCHNAME=`echo $CURRENT_BRANCH | awk -F" " '{print $2}'`
+echo $BRANCHNAME
 NOW=`date +"%Y-%m-%d %H:%M"`
 FEATURE_BRANCH="\"feature_branch\": \""$BRANCHNAME"\""
 RELEASE_DATE="\"release_date\": $NOW\""

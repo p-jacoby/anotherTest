@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TAGNAME="RELEASE_CANDIDATE"
-BRANCHES=`git branch`
+BRANCHES=`git branch -a`
 echo 'BRANCHES :'$BRANCHES
 CURRENT_BRANCH=`echo $BRANCHES | grep \*`
 echo 'CURRENT :'$CURRENT_BRANCH

@@ -4,7 +4,7 @@ TAGNAME="RELEASE_CANDIDATE"
 BRANCHES=`git branch`
 echo 'BRANCHES :'$BRANCHES
 CURRENT_BRANCH=`echo $BRANCHES | grep \*`
-BRANCHNAME=`echo $CURRENT_BRANCH | awk -F" " '{print $2}'`
+BRANCHNAME=`echo $CURRENT_BRANCH | awk -F" " '{print $4}'`
 echo 'BRANCH: '$BRANCHNAME
 NOW=`date +"%Y-%m-%d %H:%M"`
 FEATURE_BRANCH="\"feature_branch\": \""$BRANCHNAME"\""

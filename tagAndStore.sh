@@ -1,10 +1,8 @@
 #!/bin/bash
 
 TAGNAME="RELEASE_CANDIDATE"
-BRANCHES=`git branch -a`
+BRANCHES=`git branch | grep \*`
 echo 'BRANCHES :'$BRANCHES
-CURRENT_BRANCH=`echo $BRANCHES | grep \*`
-echo 'CURRENT :'$CURRENT_BRANCH
 BRANCHNAME=`echo $CURRENT_BRANCH | awk -F" " '{print $4}'`
 echo 'BRANCH: '$BRANCHNAME
 NOW=`date +"%Y-%m-%d %H:%M"`

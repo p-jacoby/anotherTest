@@ -9,7 +9,7 @@ RELEASE_DATE="\"release_date\": $NOW\""
 JSON="{ $FEATURE_BRANCH,"
 JSON=$JSON"$RELEASE_DATE,"
 JSON=$JSON" \"released_to\": \"STAGE\" }"
-TIMESTAMP=`date +"%T"`
+TIMESTAMP=`date +"%s"`
 echo 'TS:'$TIMESTAMP
 echo 'JSON: '$JSON
-curl -X PUT -H "Content-Type: application/json" http://dcp-tools-01:5984/feature-db/$TIMESTAMP -d \'$JSON\'
+curl -X PUT -H "Content-Type: application/json" http://dcp-tools-01:5984/feature-db/$TIMESTAMP ---data-urlencode $JSON
